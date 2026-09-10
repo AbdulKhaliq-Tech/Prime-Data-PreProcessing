@@ -1,0 +1,11 @@
+.pp-card {
+  background-color: var(--pp-color-surface-1);
+  border: 1px solid var(--pp-color-border-subtle);
+  border-radius: var(--pp-radius-lg);
+  padding: var(--pp-space-5);
+}
+
+.pp-card--elevated {
+  background-color: var(--pp-color-surface-elevated);
+  box-shadow: 0 8px 24px var(--pp-color-glow);
+}

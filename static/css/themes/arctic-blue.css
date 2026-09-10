@@ -1,0 +1,44 @@
+/*
+  Arctic Blue — Light theme.
+  Clean, cool, analytical, professional. Blue is an accent/hierarchy tool,
+  not a large saturated background.
+*/
+
+[data-theme="arctic-blue"] {
+  --pp-color-background: #f4f8fc;
+  --pp-color-surface-1: #eef4fa;
+  --pp-color-surface-2: #e6eff8;
+  --pp-color-surface-3: #dde9f5;
+  --pp-color-surface-elevated: #ffffff;
+  --pp-color-surface-interactive: #e3edf9;
+  --pp-color-surface-selected: #d7e6f7;
+
+  --pp-color-text-primary: #1c2b3a;
+  --pp-color-text-secondary: #48607a;
+  --pp-color-text-tertiary: #6f889f;
+  --pp-color-text-disabled: #a3b3c2;
+  --pp-color-text-placeholder: #8398ad;
+  --pp-color-text-inverse: #ffffff;
+
+  --pp-color-border-subtle: #dbe6f0;
+  --pp-color-border-default: #c4d5e5;
+  --pp-color-border-strong: #a4bcd2;
+  --pp-color-border-focus: #2f7de1;
+  --pp-color-border-active: #1f63c4;
+
+  --pp-color-primary: #2f7de1;
+  --pp-color-primary-hover: #2568c2;
+  --pp-color-primary-active: #1c53a1;
+  --pp-color-secondary: #e6eff8;
+  --pp-color-secondary-hover: #d7e6f7;
+  --pp-color-disabled: #cdd9e3;
+  --pp-color-selected: #2f7de1;
+  --pp-color-focus-ring: rgba(47, 125, 225, 0.45);
+
+  --pp-color-success: #1c8a5a;
+  --pp-color-warning: #b5760c;
+  --pp-color-error: #c23b3b;
+  --pp-color-info: #2f7de1;
+
+  --pp-color-glow: rgba(47, 125, 225, 0.16);
+}

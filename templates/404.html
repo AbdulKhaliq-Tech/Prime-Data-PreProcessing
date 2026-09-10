@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "macros/ui.html" as ui %}
+
+{% block title %}{{ app_name }} — Page not found{% endblock %}
+
+{% block content %}
+{{ ui.empty_state(
+  title='Page not found',
+  description="The page you're looking for doesn't exist in PrimeProcessing.com.",
+  action_label='Back to Home',
+  action_href=url_for('main.index')
+) }}
+{% endblock %}

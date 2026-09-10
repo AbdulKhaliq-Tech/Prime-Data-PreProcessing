@@ -1,0 +1,27 @@
+.pp-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pp-space-4);
+  z-index: 1000;
+}
+
+.pp-dialog {
+  background-color: var(--pp-color-surface-elevated);
+  border: 1px solid var(--pp-color-border-default);
+  border-radius: var(--pp-radius-lg);
+  padding: var(--pp-space-6);
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.pp-dialog__title {
+  margin: 0 0 var(--pp-space-4) 0;
+  font-size: var(--pp-font-size-xl);
+  color: var(--pp-color-text-primary);
+}

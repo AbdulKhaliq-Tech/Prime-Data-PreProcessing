@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{{ app_name }}{% endblock %}</title>
+
+  {# Set data-theme before first paint to avoid a flash of the wrong theme. #}
+  <script>
+    (function () {
+      try {
+        var stored = window.localStorage.getItem('primeprocessing:theme');
+        var valid = ['arctic-blue', 'warm-pearl', 'midnight-blue', 'graphite'];
+        document.documentElement.setAttribute(
+          'data-theme',
+          valid.indexOf(stored) !== -1 ? stored : 'arctic-blue'
+        );
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'arctic-blue');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tokens.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/themes/arctic-blue.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/themes/warm-pearl.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/themes/midnight-blue.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/themes/graphite.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/button.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/field.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/card.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/dialog.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/tooltip.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/status.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/loading.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/state.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/shell.css') }}" />
+</head>
+<body>
+  <div class="pp-shell">
+    <header class="pp-shell__topbar">
+      <span class="pp-shell__brand">{{ app_name }}</span>
+      <div class="pp-shell__topbar-actions">
+        <label class="pp-visually-hidden" for="pp-theme-select">Theme</label>
+        <select id="pp-theme-select" class="pp-shell__theme-select">
+          {% for theme in themes %}
+          <option value="{{ theme.id }}">{{ theme.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </header>
+
+    <nav class="pp-shell__nav" aria-label="Primary">
+      <span class="pp-shell__nav-item pp-shell__nav-item--active">Home</span>
+    </nav>
+
+    <main class="pp-shell__canvas">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="pp-shell__status">
+      <span id="pp-backend-status" class="pp-status pp-status--neutral">
+        <span class="pp-status__icon" aria-hidden="true">•</span>
+        Checking backend…
+      </span>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/apiClient.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

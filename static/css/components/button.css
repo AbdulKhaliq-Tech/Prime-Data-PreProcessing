@@ -1,0 +1,70 @@
+.pp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pp-space-2);
+  height: var(--pp-density-control-height);
+  padding: 0 var(--pp-space-4);
+  border-radius: var(--pp-radius-md);
+  border: 1px solid transparent;
+  font-family: var(--pp-font-family);
+  font-size: var(--pp-font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--pp-motion-fast) var(--pp-motion-easing),
+    border-color var(--pp-motion-fast) var(--pp-motion-easing),
+    transform var(--pp-motion-fast) var(--pp-motion-easing);
+}
+
+.pp-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.pp-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pp-button--primary {
+  background-color: var(--pp-color-primary);
+  color: var(--pp-color-text-inverse);
+}
+.pp-button--primary:hover:not(:disabled) {
+  background-color: var(--pp-color-primary-hover);
+}
+.pp-button--primary:active:not(:disabled) {
+  background-color: var(--pp-color-primary-active);
+}
+
+.pp-button--secondary {
+  background-color: var(--pp-color-secondary);
+  color: var(--pp-color-text-primary);
+  border-color: var(--pp-color-border-default);
+}
+.pp-button--secondary:hover:not(:disabled) {
+  background-color: var(--pp-color-secondary-hover);
+}
+
+.pp-button--ghost {
+  background-color: transparent;
+  color: var(--pp-color-text-primary);
+}
+.pp-button--ghost:hover:not(:disabled) {
+  background-color: var(--pp-color-surface-interactive);
+}
+
+.pp-button__spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: pp-spin 700ms linear infinite;
+}
+
+@keyframes pp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

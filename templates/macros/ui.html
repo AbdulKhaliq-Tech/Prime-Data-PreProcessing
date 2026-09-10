@@ -1,0 +1,113 @@
+{# Reusable UI primitives for PrimeProcessing.com, mirroring the component
+   set required by the Master UI Guidelines: Button, Input, Select,
+   Card/Surface, Dialog/Modal (see templates/macros/dialog.html), Tooltip,
+   Status, Loading, and Empty/Error states. #}
+
+{% macro button(label, variant='primary', type='button', id=none, disabled=False, loading=False, extra_attrs='') %}
+<button
+  type="{{ type }}"
+  {% if id %}id="{{ id }}"{% endif %}
+  class="pp-button pp-button--{{ variant }}"
+  {% if disabled or loading %}disabled{% endif %}
+  {% if loading %}aria-busy="true"{% endif %}
+  {{ extra_attrs|safe }}
+>
+  {% if loading %}<span class="pp-button__spinner" aria-hidden="true"></span>{% endif %}
+  <span class="pp-button__label">{{ label }}</span>
+</button>
+{% endmacro %}
+
+{% macro input(id, label=none, type='text', placeholder='', value='', error=none, helper_text=none, extra_attrs='') %}
+<div class="pp-field">
+  {% if label %}<label class="pp-field__label" for="{{ id }}">{{ label }}</label>{% endif %}
+  <input
+    id="{{ id }}"
+    name="{{ id }}"
+    type="{{ type }}"
+    class="pp-input {% if error %}pp-input--error{% endif %}"
+    placeholder="{{ placeholder }}"
+    value="{{ value }}"
+    {% if error %}aria-invalid="true" aria-describedby="{{ id }}-error"{% elif helper_text %}aria-describedby="{{ id }}-helper"{% endif %}
+    {{ extra_attrs|safe }}
+  />
+  {% if error %}
+  <p id="{{ id }}-error" class="pp-field__message pp-field__message--error">{{ error }}</p>
+  {% elif helper_text %}
+  <p id="{{ id }}-helper" class="pp-field__message">{{ helper_text }}</p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro select(id, options, label=none, selected=none, error=none, helper_text=none, extra_attrs='') %}
+<div class="pp-field">
+  {% if label %}<label class="pp-field__label" for="{{ id }}">{{ label }}</label>{% endif %}
+  <select
+    id="{{ id }}"
+    name="{{ id }}"
+    class="pp-select {% if error %}pp-input--error{% endif %}"
+    {% if error %}aria-invalid="true" aria-describedby="{{ id }}-error"{% elif helper_text %}aria-describedby="{{ id }}-helper"{% endif %}
+    {{ extra_attrs|safe }}
+  >
+    {% for option in options %}
+    <option value="{{ option.value }}" {% if option.value == selected %}selected{% endif %}>{{ option.label }}</option>
+    {% endfor %}
+  </select>
+  {% if error %}
+  <p id="{{ id }}-error" class="pp-field__message pp-field__message--error">{{ error }}</p>
+  {% elif helper_text %}
+  <p id="{{ id }}-helper" class="pp-field__message">{{ helper_text }}</p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro card(elevated=False, extra_class='') %}
+<div class="pp-card {% if elevated %}pp-card--elevated{% endif %} {{ extra_class }}">
+  {{ caller() }}
+</div>
+{% endmacro %}
+
+{% macro status(tone='neutral') %}
+{% set icons = {'success': '✓', 'warning': '!', 'error': '✕', 'info': 'i', 'neutral': '•'} %}
+<span class="pp-status pp-status--{{ tone }}">
+  <span class="pp-status__icon" aria-hidden="true">{{ icons.get(tone, icons['neutral']) }}</span>
+  {{ caller() }}
+</span>
+{% endmacro %}
+
+{% macro loading(label='Loading…', progress=none) %}
+<div class="pp-loading" role="status" aria-live="polite">
+  {% if progress is not none %}
+  <div class="pp-loading__track">
+    <div class="pp-loading__bar" style="width: {{ progress }}%;"></div>
+  </div>
+  <span class="pp-loading__label">{{ label }} ({{ progress|round|int }}%)</span>
+  {% else %}
+  <span class="pp-loading__spinner" aria-hidden="true"></span>
+  <span class="pp-loading__label">{{ label }}</span>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro empty_state(title, description=none, action_label=none, action_href=none) %}
+<div class="pp-state pp-state--empty">
+  <p class="pp-state__title">{{ title }}</p>
+  {% if description %}<p class="pp-state__description">{{ description }}</p>{% endif %}
+  {% if action_label and action_href %}
+  <a class="pp-button pp-button--secondary" href="{{ action_href }}"><span class="pp-button__label">{{ action_label }}</span></a>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro error_state(title='Something went wrong', description=none) %}
+<div class="pp-state pp-state--error" role="alert">
+  <p class="pp-state__title">{{ title }}</p>
+  {% if description %}<p class="pp-state__description">{{ description }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro tooltip(label, id) %}
+<span class="pp-tooltip-wrapper" data-tooltip-trigger data-tooltip-id="{{ id }}">
+  {{ caller() }}
+  <span role="tooltip" id="{{ id }}" class="pp-tooltip" hidden>{{ label }}</span>
+</span>
+{% endmacro %}

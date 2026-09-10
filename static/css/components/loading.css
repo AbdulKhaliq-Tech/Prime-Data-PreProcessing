@@ -1,0 +1,37 @@
+.pp-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+  color: var(--pp-color-text-secondary);
+  font-size: var(--pp-font-size-sm);
+}
+
+.pp-loading__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--pp-color-border-default);
+  border-top-color: var(--pp-color-primary);
+  animation: pp-spin 700ms linear infinite;
+  display: inline-block;
+}
+
+.pp-loading__track {
+  width: 120px;
+  height: 6px;
+  border-radius: var(--pp-radius-pill);
+  background-color: var(--pp-color-surface-3);
+  overflow: hidden;
+}
+
+.pp-loading__bar {
+  height: 100%;
+  background-color: var(--pp-color-primary);
+  transition: width var(--pp-motion-normal) var(--pp-motion-easing);
+}
+
+@keyframes pp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

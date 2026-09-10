@@ -1,0 +1,26 @@
+.pp-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--pp-space-2);
+  padding: var(--pp-space-6);
+  border-radius: var(--pp-radius-lg);
+  border: 1px dashed var(--pp-color-border-default);
+  background-color: var(--pp-color-surface-1);
+}
+
+.pp-state__title {
+  margin: 0;
+  font-weight: 600;
+  color: var(--pp-color-text-primary);
+}
+
+.pp-state__description {
+  margin: 0;
+  color: var(--pp-color-text-secondary);
+  font-size: var(--pp-font-size-sm);
+}
+
+.pp-state--error {
+  border-color: var(--pp-color-error);
+}

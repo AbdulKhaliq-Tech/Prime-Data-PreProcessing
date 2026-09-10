@@ -1,0 +1,54 @@
+/*
+  Global base styles for PrimeProcessing.com.
+
+  Content always has visual priority over decorative effects, and every
+  interactive element must have a visible keyboard-focus state.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--pp-font-family);
+  font-size: var(--pp-font-size-md);
+  line-height: var(--pp-line-height-normal);
+  background-color: var(--pp-color-background);
+  color: var(--pp-color-text-primary);
+  transition: background-color var(--pp-motion-normal) var(--pp-motion-easing),
+    color var(--pp-motion-normal) var(--pp-motion-easing);
+}
+
+:focus-visible {
+  outline: 2px solid var(--pp-color-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--pp-radius-sm);
+}
+
+a {
+  color: var(--pp-color-primary);
+}
+
+::selection {
+  background-color: var(--pp-color-glow);
+}
+
+.pp-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,23 @@
+.pp-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.pp-tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--pp-space-2));
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--pp-color-text-primary);
+  color: var(--pp-color-background);
+  font-size: var(--pp-font-size-xs);
+  padding: var(--pp-space-1) var(--pp-space-2);
+  border-radius: var(--pp-radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pp-tooltip[hidden] {
+  display: none;
+}

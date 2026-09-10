@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "macros/ui.html" as ui %}
+
+{% block title %}{{ app_name }} — Error{% endblock %}
+
+{% block content %}
+{{ ui.error_state(
+  title='Something went wrong (' ~ code ~ ')',
+  description=message
+) }}
+{% endblock %}

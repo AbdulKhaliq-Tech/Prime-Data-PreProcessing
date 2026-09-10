@@ -1,0 +1,63 @@
+.pp-shell {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
+
+.pp-shell__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--pp-space-3) var(--pp-space-5);
+  background-color: var(--pp-color-surface-elevated);
+  border-bottom: 1px solid var(--pp-color-border-subtle);
+}
+
+.pp-shell__brand {
+  font-weight: 700;
+  font-size: var(--pp-font-size-lg);
+  color: var(--pp-color-text-primary);
+}
+
+.pp-shell__theme-select {
+  height: 32px;
+  padding: 0 var(--pp-space-2);
+  border-radius: var(--pp-radius-md);
+  border: 1px solid var(--pp-color-border-default);
+  background-color: var(--pp-color-surface-elevated);
+  color: var(--pp-color-text-primary);
+  font-size: var(--pp-font-size-sm);
+}
+
+.pp-shell__nav {
+  display: flex;
+  gap: var(--pp-space-2);
+  padding: var(--pp-space-2) var(--pp-space-5);
+  background-color: var(--pp-color-surface-1);
+  border-bottom: 1px solid var(--pp-color-border-subtle);
+}
+
+.pp-shell__nav-item {
+  padding: var(--pp-space-2) var(--pp-space-3);
+  border-radius: var(--pp-radius-md);
+  font-size: var(--pp-font-size-sm);
+  font-weight: 600;
+  color: var(--pp-color-text-secondary);
+}
+
+.pp-shell__nav-item--active {
+  background-color: var(--pp-color-surface-selected);
+  color: var(--pp-color-text-primary);
+}
+
+.pp-shell__canvas {
+  padding: var(--pp-space-6);
+}
+
+.pp-shell__status {
+  display: flex;
+  align-items: center;
+  padding: var(--pp-space-2) var(--pp-space-5);
+  border-top: 1px solid var(--pp-color-border-subtle);
+  background-color: var(--pp-color-surface-elevated);
+}

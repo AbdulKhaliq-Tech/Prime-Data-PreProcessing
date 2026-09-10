@@ -1,0 +1,44 @@
+/*
+  Graphite — Dark theme.
+  Minimal, neutral, sophisticated, enterprise. Must read as distinct from
+  Midnight Blue while both are dark themes.
+*/
+
+[data-theme="graphite"] {
+  --pp-color-background: #121314;
+  --pp-color-surface-1: #18191b;
+  --pp-color-surface-2: #1f2022;
+  --pp-color-surface-3: #26282a;
+  --pp-color-surface-elevated: #2c2e31;
+  --pp-color-surface-interactive: #222325;
+  --pp-color-surface-selected: #2e3134;
+
+  --pp-color-text-primary: #f3f4f5;
+  --pp-color-text-secondary: #c3c6ca;
+  --pp-color-text-tertiary: #94989e;
+  --pp-color-text-disabled: #5f6367;
+  --pp-color-text-placeholder: #7d8186;
+  --pp-color-text-inverse: #121314;
+
+  --pp-color-border-subtle: #232426;
+  --pp-color-border-default: #323436;
+  --pp-color-border-strong: #46484b;
+  --pp-color-border-focus: #7c9cff;
+  --pp-color-border-active: #93aeff;
+
+  --pp-color-primary: #7c9cff;
+  --pp-color-primary-hover: #93aeff;
+  --pp-color-primary-active: #6685e6;
+  --pp-color-secondary: #1f2022;
+  --pp-color-secondary-hover: #26282a;
+  --pp-color-disabled: #35373a;
+  --pp-color-selected: #7c9cff;
+  --pp-color-focus-ring: rgba(124, 156, 255, 0.5);
+
+  --pp-color-success: #4fc084;
+  --pp-color-warning: #e2ac4c;
+  --pp-color-error: #e6685f;
+  --pp-color-info: #7c9cff;
+
+  --pp-color-glow: rgba(124, 156, 255, 0.18);
+}

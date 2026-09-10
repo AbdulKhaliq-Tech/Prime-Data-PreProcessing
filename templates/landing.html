@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "macros/ui.html" as ui %}
+
+{% block title %}{{ app_name }} — Foundation{% endblock %}
+
+{% block content %}
+{% call ui.card(elevated=True) %}
+  <h1 style="margin-top:0;">Project foundation ready</h1>
+  <p>
+    This is the Phase 00 foundation shell for PrimeProcessing.com. Routing,
+    theming, reusable UI primitives, and the API boundary are in place.
+    No functional data-processing module is implemented yet.
+  </p>
+  {{ ui.button('Start Processing (enabled in a later phase)', variant='primary', disabled=True) }}
+{% endcall %}
+{% endblock %}

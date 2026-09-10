@@ -1,0 +1,43 @@
+/*
+  Midnight Blue — Dark theme.
+  Powerful, technical, premium, modern. Layered navy values, never pure black.
+*/
+
+[data-theme="midnight-blue"] {
+  --pp-color-background: #0b1526;
+  --pp-color-surface-1: #101d33;
+  --pp-color-surface-2: #15243d;
+  --pp-color-surface-3: #1b2c48;
+  --pp-color-surface-elevated: #1f3252;
+  --pp-color-surface-interactive: #1a2a45;
+  --pp-color-surface-selected: #223a5e;
+
+  --pp-color-text-primary: #f2f6fb;
+  --pp-color-text-secondary: #b7c4d6;
+  --pp-color-text-tertiary: #8b9cb3;
+  --pp-color-text-disabled: #5c6c82;
+  --pp-color-text-placeholder: #7688a0;
+  --pp-color-text-inverse: #0b1526;
+
+  --pp-color-border-subtle: #1e2f4a;
+  --pp-color-border-default: #2b3e5c;
+  --pp-color-border-strong: #3d5378;
+  --pp-color-border-focus: #4d8fe0;
+  --pp-color-border-active: #6ba4ec;
+
+  --pp-color-primary: #4d8fe0;
+  --pp-color-primary-hover: #6ba4ec;
+  --pp-color-primary-active: #367ad0;
+  --pp-color-secondary: #15243d;
+  --pp-color-secondary-hover: #1b2c48;
+  --pp-color-disabled: #2a3a52;
+  --pp-color-selected: #4d8fe0;
+  --pp-color-focus-ring: rgba(77, 143, 224, 0.5);
+
+  --pp-color-success: #3fbf82;
+  --pp-color-warning: #e0a83f;
+  --pp-color-error: #e0645a;
+  --pp-color-info: #4d8fe0;
+
+  --pp-color-glow: rgba(77, 143, 224, 0.22);
+}

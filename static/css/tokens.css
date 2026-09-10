@@ -1,0 +1,68 @@
+/*
+  Central design tokens for PrimeProcessing.com.
+
+  This file defines structural tokens (spacing, radius, typography scale,
+  motion durations) shared by all four themes. Color tokens are
+  theme-specific and live in static/css/themes/*.css — a theme file sets
+  values for the same variable names used here, keyed by [data-theme].
+
+  Phase 00 scope: token architecture and primitive-level values only.
+  No module-specific styling exists yet.
+*/
+
+:root {
+  /* Spacing scale */
+  --pp-space-1: 4px;
+  --pp-space-2: 8px;
+  --pp-space-3: 12px;
+  --pp-space-4: 16px;
+  --pp-space-5: 20px;
+  --pp-space-6: 24px;
+  --pp-space-8: 32px;
+
+  /* Radius scale */
+  --pp-radius-sm: 4px;
+  --pp-radius-md: 8px;
+  --pp-radius-lg: 12px;
+  --pp-radius-pill: 999px;
+
+  /* Typography scale */
+  --pp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --pp-font-size-xs: 12px;
+  --pp-font-size-sm: 13px;
+  --pp-font-size-md: 14px;
+  --pp-font-size-lg: 16px;
+  --pp-font-size-xl: 20px;
+  --pp-font-size-2xl: 28px;
+  --pp-line-height-tight: 1.25;
+  --pp-line-height-normal: 1.5;
+
+  /* Motion */
+  --pp-motion-fast: 120ms;
+  --pp-motion-normal: 200ms;
+  --pp-motion-slow: 320ms;
+  --pp-motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Density (overridden by UI-density preference in a later phase) */
+  --pp-density-control-height: 36px;
+  --pp-density-row-padding: var(--pp-space-3);
+}
+
+/* Reduced-motion foundation: honored globally, refined per-component later */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --pp-motion-fast: 0ms;
+    --pp-motion-normal: 0ms;
+    --pp-motion-slow: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

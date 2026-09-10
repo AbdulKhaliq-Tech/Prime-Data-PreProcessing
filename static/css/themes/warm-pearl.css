@@ -1,0 +1,43 @@
+/*
+  Warm Pearl — Light theme.
+  Elegant, warm, premium, enterprise. Golden tones stay subtle accents only.
+*/
+
+[data-theme="warm-pearl"] {
+  --pp-color-background: #faf7f1;
+  --pp-color-surface-1: #f6f1e8;
+  --pp-color-surface-2: #f1ebde;
+  --pp-color-surface-3: #ebe3d3;
+  --pp-color-surface-elevated: #fffdf9;
+  --pp-color-surface-interactive: #f2ead9;
+  --pp-color-surface-selected: #ecdfc3;
+
+  --pp-color-text-primary: #2e2a22;
+  --pp-color-text-secondary: #5c5648;
+  --pp-color-text-tertiary: #837a68;
+  --pp-color-text-disabled: #b3a993;
+  --pp-color-text-placeholder: #978d78;
+  --pp-color-text-inverse: #fffdf9;
+
+  --pp-color-border-subtle: #ece3d2;
+  --pp-color-border-default: #ddd0b6;
+  --pp-color-border-strong: #c2af8c;
+  --pp-color-border-focus: #b8862c;
+  --pp-color-border-active: #9c701f;
+
+  --pp-color-primary: #b8862c;
+  --pp-color-primary-hover: #9c701f;
+  --pp-color-primary-active: #825c17;
+  --pp-color-secondary: #f1ebde;
+  --pp-color-secondary-hover: #ecdfc3;
+  --pp-color-disabled: #ddd3bd;
+  --pp-color-selected: #b8862c;
+  --pp-color-focus-ring: rgba(184, 134, 44, 0.4);
+
+  --pp-color-success: #2f7d4e;
+  --pp-color-warning: #a5680b;
+  --pp-color-error: #b0402f;
+  --pp-color-info: #4a739a;
+
+  --pp-color-glow: rgba(184, 134, 44, 0.14);
+}
