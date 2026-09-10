@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PrimeProcessing.com
 
 An integrated data cleaning, transformation, analysis, visualization, and
@@ -123,3 +124,7 @@ exact results, including live-server verification.
 
 **Phase 01 — Landing Page, Application Shell, Settings & Shared Data
 Preview**, pending project-owner review and confirmation of Phase 00.
+=======
+# Prime-Data-PreProcessing
+An automated data preprocessing system for cleaning, validating, transforming, and preparing structured datasets for analysis and machine learning.
+>>>>>>> 8b791a384a8c902be9f155d52de464192c3d4719
